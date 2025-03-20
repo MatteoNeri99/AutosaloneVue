@@ -1,6 +1,4 @@
 <script>
-import axios from 'axios';
-
 export default{
 
   data(){
@@ -13,7 +11,7 @@ export default{
 </script>
 
 <template>
-  <h1>ciao</h1>
+  <h1>Header</h1>
 </template>
 
 <style>
