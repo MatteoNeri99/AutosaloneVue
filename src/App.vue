@@ -1,11 +1,9 @@
 <script>
-import MainApp from './components/MainApp.vue'
 import FooterApp from './components/FooterApp.vue'
 import HeaderApp from './components/HeaderApp.vue'
 export default{
   components:{
     HeaderApp,
-    MainApp,
     FooterApp
   },
 
@@ -19,9 +17,7 @@ export default{
 </script>
 
 <template>
-  <HeaderApp/>
-  <MainApp/>
-  <FooterApp/>
+   <router-view></router-view>
 </template>
 
 <style>

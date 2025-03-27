@@ -1,9 +1,14 @@
 <script>
 import axios from 'axios';
 import { store } from '../store.js';
+import MainCardAuto from '../components/MainComponents/MainCardAuto.vue';
 export default{
+  components:{
+    MainCardAuto
+  },
 
   data(){
+    
     return{
       store,
 
@@ -16,8 +21,8 @@ export default{
     }
     })
     .then(function (response) {
-      console.log(response.data);
-      store.auto=response
+      store.auto=response.data
+      console.log(store.auto);
     })
     .catch(function (error) {
       console.log(error);
@@ -33,8 +38,13 @@ export default{
 
 </script>
 
+
 <template>
-  <h1>Main</h1>
+  
+  <h1>indx</h1>
+
+  <MainCardAuto :auto='store.auto'/>
+
 </template>
 
 <style>
