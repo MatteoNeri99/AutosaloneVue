@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../src/views/Home.vue'; 
 import Index from './views/index.vue';
 import Show from './views/show.vue';
+import Contatti from './views/Contatti.vue';
+import ChiSiamo from './views/ChiSiamo.vue';
 
 
 const routes = [
@@ -14,6 +16,16 @@ const routes = [
     path: '/auto',
     name: 'auto',
     component: Index,
+  },
+  {
+    path: '/Contatti',
+    name: 'contatti',
+    component: Contatti,
+  },
+  {
+    path: '/chi-siamo',
+    name: 'chi-siamo',
+    component: ChiSiamo,
   },
   {
     path: '/auto/:id',

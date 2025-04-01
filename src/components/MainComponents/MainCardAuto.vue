@@ -25,16 +25,12 @@ export default{
 
 <template>
 
-    <h1>Card auto</h1>
+    
 
-    <div class="container">
+    <div>
 
         <article v-for="auto in auto">
         <MainAutoEl :auto='auto'/>
-
-        <a>
-            <router-link :to="{ name: 'auto-dettagli', params: { id: auto.id } }" >Mostra dettagli</router-link>
-        </a>
         </article>
 
     </div>
@@ -44,12 +40,20 @@ export default{
 
 <style scoped>
 article{
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    width: calc((100% / 3) - 2rem);
+    margin-right: 2rem;
+    background-color:  #252525;
+    border: transparent;
+    border-radius: 10px;
 }
 
 div{
-    width: 700px;
+    width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 

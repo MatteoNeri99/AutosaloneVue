@@ -17,14 +17,19 @@ export default{
 </script>
 
 <template>
-  <h1>sho</h1>
-  <MainAutoShow :id = 'id'/>
 
-  <a>
-      <router-link :to="{ name: 'auto'}" >Torna ad auto</router-link>
-  </a>
+ 
+    <MainAutoShow :id = 'id'/>
+
+  
+  
+
+ 
 </template>
 
-<style>
+<style scoped>
+main{
+  margin: 0 auto;
+}
 
 </style>
