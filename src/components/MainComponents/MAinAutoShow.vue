@@ -95,6 +95,8 @@ export default{
         <hr>
         <p class="car-p">Potenza : <span>{{ auto.cavalli }}cv</span></p>
         <hr>
+        <p class="car-p">Cambio : <span>{{ auto.cambio }}</span></p>
+        <hr>
         <p class="car-p">Emissionio <span>{{ auto.emissioni }}</span></p>
         <hr>
         <p class="car-p">Numero porte : <span>{{ auto.porte }}</span></p>

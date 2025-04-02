@@ -61,6 +61,8 @@ export default{
 
     <div class="ricerca">
 
+      <h2>Cerca per :</h2>
+
       <label  for="marca">Marca</label>
       <input type="text" v-model="marca" name="marca" id="marca" placeholder="Marca...">
 
@@ -127,6 +129,7 @@ main{
   h1{
     font-size: 2.5rem;
     text-transform: uppercase;
+    font-weight: bold;
 
   }
 
@@ -171,10 +174,15 @@ main{
   color: #FFFFFF;
   font-size: 1.2rem;
 
+  h2{
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
   input{
     width: 300px;
     background-color: #030303;  
-    border-color: #D32F2F;
+    border: 2px solid #D32F2F;
     padding: 0.7rem;
     color: #FFFFFF;
     margin-bottom: 0.9rem;
@@ -184,8 +192,8 @@ main{
 
     width: 300px;
     background-color: #030303; 
-    border-color: #D32F2F;
-    padding: 0.5rem;
+    border: 2px solid #D32F2F;
+    padding: 0.7rem;
     color: #FFFFFF;
     margin-bottom: 0.9rem;
 
@@ -194,7 +202,7 @@ main{
   button{
     width: 90px;
     background-color: #030303; 
-    border-color: #D32F2F;
+    border: 2px solid #D32F2F;
     color: #FFFFFF;
     padding: 0.5rem;
   }
