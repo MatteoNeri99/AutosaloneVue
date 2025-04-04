@@ -18,34 +18,44 @@ export default{
       km:'',
       nuovaUsata:'',
       prezzo:'',
-      carburante:''
+      carburante:'',
+      currentPage: 1, // Pagina iniziale
+      lastPage: 1, // Ultima pagina
 
 
 
     }
   },methods: {
-    getAuto(){
+    getAuto(page = 1) {
       axios.get('http://127.0.0.1:8000/api/auto', {
-    params: {
-      marca : this.marca ,
-      modello : this.nome,
-      km : this.km,
-      nuova : this.nuovaUsata,
-      prezzo : this.prezzo,
-      carburante_id : this.carburante
-      
-    }
-    })
-    .then( (response) =>  {
-      store.auto=response.data
-      console.log(store.auto);
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-    .finally(function () {
-      // always executed
-    });
+        params: {
+          marca: this.marca,
+          modello: this.nome,
+          km: this.km,
+          nuova: this.nuovaUsata,
+          prezzo: this.prezzo,
+          carburante_id: this.carburante,
+          page: page // Passa il numero della pagina
+        }
+      })
+      .then((response) => {
+        store.auto = response.data.data; 
+        this.currentPage = response.data.current_page; 
+        this.lastPage = response.data.last_page; 
+        this.total = response.data.total; 
+        console.log(this.autoList);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        // Always executed
+      });
+    },changePage(page) {
+      if (page >= 1 && page <= this.lastPage) {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); 
+        this.getAuto(page); 
+      }
     }
   },created(){
     this.getAuto();
@@ -114,7 +124,13 @@ export default{
     
    
   </main>
+  <div class="pagination">
+    <button @click="changePage(currentPage - 1)" :disabled="currentPage === 1">Indietro</button>
 
+    <span>Pagina {{ currentPage }} di {{ lastPage }}</span>
+
+    <button @click="changePage(currentPage + 1)" :disabled="currentPage === lastPage">Avanti</button>
+  </div>
   
 
 </template>
@@ -125,6 +141,7 @@ main{
   display: flex;
   max-width: 1200px;
   padding-top:10rem ;
+  margin-bottom: 3rem;
 
   h1{
     font-size: 2.5rem;
@@ -169,6 +186,25 @@ main{
 
 }
 
+.pagination{
+  justify-self: center;
+  color: white;
+  margin-bottom: 2rem;
+
+  button{
+    background-color: #FFEB3B;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: 20px;
+
+  }
+
+  span{
+    margin:0 1rem
+  }
+}
+
 .ricerca{
   padding:8rem 3rem;
   color: #FFFFFF;
@@ -207,5 +243,95 @@ main{
     padding: 0.5rem;
   }
 }
+
+/* Solo per dispositivi mobili e tablet */
+@media screen and (max-width: 1024px) {
+
+  main {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    padding-top: 10rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+
+    h1 {
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    hr {
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+    }
+
+    .condizione {
+      background-color: #030303;
+      color: white;
+      font-size: 1.5rem;
+      border-color: #D32F2F;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      align-self: center;
+      margin-top: 1rem;
+      margin-left: 1rem;
+    }
+
+    .index {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .flex {
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .ricerca {
+    padding: 2rem;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+
+    h2 {
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    input {
+      width: 300px;
+      background-color: #030303;
+      border: 2px solid #D32F2F;
+      padding: 0.7rem;
+      color: #FFFFFF;
+      margin-bottom: 0.9rem;
+    }
+
+    select {
+      width: 300px;
+      background-color: #030303;
+      border: 2px solid #D32F2F;
+      padding: 0.7rem;
+      color: #FFFFFF;
+      margin-bottom: 0.9rem;
+    }
+
+    button {
+      width: 90px;
+      background-color: #030303;
+      border: 2px solid #D32F2F;
+      color: #FFFFFF;
+      padding: 0.5rem;
+    }
+  }
+}
+
 
 </style>

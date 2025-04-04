@@ -28,16 +28,23 @@ const routes = [
     component: ChiSiamo,
   },
   {
-    path: '/auto/:id',
+    path: '/dettagli/:id',
     name: 'auto-dettagli',
     component: Show,
     props: true, 
   },
+  
 ];
+
+
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0, behavior: 'smooth' }; // Scorrimento in alto con animazione
+  }
 });
 
 export default router;

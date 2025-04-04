@@ -50,6 +50,11 @@ export default{
       try {
         const response = await axios.post('http://localhost:8000/api/messages', this.form);
         alert(response.data.message);
+        this.form = {
+        nome: '',
+        email: '',
+        messaggio: ''
+    };
       } catch (error) {
         console.error("Errore nell'invio del messaggio", error);
       }
@@ -131,10 +136,6 @@ export default{
     </form>
 
   </div>
-  <a>
-    <router-link :to="{ name: 'auto'}" >Torna ad auto</router-link>
-  </a>
-
  
 </template>
 
@@ -142,12 +143,12 @@ export default{
 
 .flex {
   display: flex;
-  width: 1400px;
+  max-width: 1400px;
   justify-content: center; 
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 0 auto;
-  margin-top: 5rem;
+  margin: 5rem auto 0;
+  padding: 0 1rem;
 }
 
 .caratteristiche {
@@ -180,7 +181,7 @@ export default{
     text-align: center;
     background-color: #D32F2F;
     width: 200px;
-    padding: .5rem;
+    padding: 0.5rem;
     font-size: 1.8rem;
     position: absolute;
     right: 0;
@@ -192,11 +193,10 @@ export default{
 .carosello {
   color: white;
   margin-top: 2rem;
-  justify-self: center;
   position: relative;
   width: 60%;
+  max-width: 800px;
   margin-right: 3rem;
- 
 
   h1 {
     font-weight: bold;
@@ -217,7 +217,7 @@ export default{
     justify-content: center;
     gap: 10px;
     margin-top: 10px;
-    overflow-x: auto; 
+    overflow-x: auto;
   }
 
   .miniature {
@@ -250,17 +250,19 @@ export default{
     border: none;
     cursor: pointer;
     z-index: 10;
-    img {
-      width: 40px;
-    }
+  }
+
+  .avanti img,
+  .indietro img {
+    width: 40px;
   }
 
   .avanti {
-    right: +2px;
+    right: 5px;
   }
 
   .indietro {
-    left: +2px;
+    left: 5px;
   }
 
   .avanti:hover,
@@ -269,84 +271,77 @@ export default{
   }
 }
 
-
 .descrizione {
   color: white;
   display: flex;
-  width: 1400px;
+  max-width: 1400px;
   justify-content: center; 
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 0 auto;
-  margin-top: 5rem;
+  margin: 5rem auto;
+  padding: 0 1rem;
 
-  h1{
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
+  h1 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
  
- 
-  .container{
+  .container {
     width: 60%;
-
-    
+    max-width: 800px;
   }
 
-  form{
+  form {
     width: 35%;
-    display:flex;
+    max-width: 400px;
+    display: flex;
     flex-direction: column;
-    margin-left:3rem ;
+    margin-left: 3rem;
     color: white;
-
-    p{
-      margin-bottom: 2rem;
-    }
-    
   }
 
-  
-  input{
+  form p {
+    margin-bottom: 2rem;
+  }
+
+  input,
+  textarea {
     border: 1px solid #D32F2F;
     background-color: #252525;
     padding: 1rem;
     margin-bottom: 2rem;
     color: white;
-    
-  }
-
-  textarea{
-    border: 1px solid #D32F2F;
-    background-color: #252525;
-    padding: 1rem;
     width: 100%;
-    margin-bottom: 2rem;
-    color: white;
-
   }
 
-  button{
+  button {
     width: 90px;
     background-color: #252525; 
     border-color: #D32F2F;
     color: #FFFFFF;
     padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
+  button:hover {
+    background-color: #D32F2F;
   }
 }
 
+/* Responsive Design */
 
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 1024px) {
   .flex {
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    padding: 0;
   }
 
   .caratteristiche {
     width: 80%;
-    
-
+    max-width: 600px;
   }
 
   .carosello {
@@ -361,9 +356,98 @@ export default{
   .descrizione {
     width: 90%;
     margin-top: 1rem;
-    margin: 0 auto;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+    margin-left: 0;
   }
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .indietro,
+  .avanti{
+    width: 10px;
+    padding: 10px;
+
+  }
+
+  .avanti {
+    right: -5px;
+  }
+
+  .indietro {
+    left: -5px;
+  }
+
+  .caratteristiche {
+    width: 90%;
+    height: 650px;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .carosello {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .descrizione {
+    width: 100%;
+    margin-top: 2rem ;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .container,
+  form {
+    align-items: center;
+    width: 90% !important;
+    padding: 2rem;
+    margin-left: 0rem !important;
+    max-width: 100%;
+  }
+
+
+
+  .miniature-img {
+    width: 80px;
+  }
+
+  .avanti img,
+  .indietro img {
+    width: 30px;
+  }
+
+  .prezzo {
+    width: 150px;
+    font-size: 1.5rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.8rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+}
+
 </style>
 
 
