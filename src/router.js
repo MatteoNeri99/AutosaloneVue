@@ -8,7 +8,7 @@ import ChiSiamo from './views/ChiSiamo.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: Home,
   },

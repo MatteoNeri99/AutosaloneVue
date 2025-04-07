@@ -1,16 +1,24 @@
 <script>
 import FooterApp from './components/FooterApp.vue'
 import HeaderApp from './components/HeaderApp.vue';
+import IntroApp from "./components/IntroApp.vue";
+
 
 export default{
   components:{
     HeaderApp,
-    FooterApp
+    FooterApp,
+    IntroApp,
   },
 
   data(){
     return{
-
+      showIntro: !localStorage.getItem("introShown"),
+    }
+  },methods: {
+    handleIntroDone() {
+      this.showIntro = false;
+      this.$router.push('/home');
     }
   }
 }
@@ -18,9 +26,10 @@ export default{
 </script>
 
 <template>
-   <HeaderApp/>
-   <router-view :key="$route.fullPath"></router-view>
-   <FooterApp/>
+   <HeaderApp  v-if="!showIntro"/>
+   <IntroApp v-if="showIntro" @done="handleIntroDone" />
+   <router-view  v-if="!showIntro" :key="$route.fullPath"></router-view>
+   <FooterApp  v-if="!showIntro"/>
 </template>
 
 <style>

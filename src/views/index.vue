@@ -3,30 +3,31 @@ import axios from 'axios';
 import { store } from '../store.js';
 import MainCardAuto from '../components/MainComponents/MainCardAuto.vue';
 
-
-export default{
-  components:{
+export default {
+  components: {
     MainCardAuto,
   },
 
-  data(){
-    
-    return{
+  data() {
+    return {
       store,
-      nome:'',
-      marca:'',
-      km:'',
-      nuovaUsata:'',
-      prezzo:'',
-      carburante:'',
-      currentPage: 1, // Pagina iniziale
-      lastPage: 1, // Ultima pagina
+      nome: '',
+      marca: '',
+      km: '',
+      nuovaUsata: '',
+      prezzo: '',
+      carburante: '',
+      currentPage: 1,
+      lastPage: 1,
+      loading: true,
+    };
+  },
 
+  methods: {
+      getAuto(page = 1) {
+      this.loading = true;
+      const startTime = Date.now();
 
-
-    }
-  },methods: {
-    getAuto(page = 1) {
       axios.get('http://127.0.0.1:8000/api/auto', {
         params: {
           marca: this.marca,
@@ -35,39 +36,58 @@ export default{
           nuova: this.nuovaUsata,
           prezzo: this.prezzo,
           carburante_id: this.carburante,
-          page: page // Passa il numero della pagina
-        }
+          page: page,
+        },
       })
       .then((response) => {
-        store.auto = response.data.data; 
-        this.currentPage = response.data.current_page; 
-        this.lastPage = response.data.last_page; 
-        this.total = response.data.total; 
-        console.log(this.autoList);
+        store.auto = response.data.data;
+        this.currentPage = response.data.current_page;
+        this.lastPage = response.data.last_page;
+        this.total = response.data.total;
       })
       .catch((error) => {
         console.log(error);
       })
       .finally(() => {
-        // Always executed
+        const elapsed = Date.now() - startTime;
+        const remaining = 1500 - elapsed;
+        setTimeout(() => {
+          this.loading = false;
+        }, remaining > 0 ? remaining : 0);
       });
-    },changePage(page) {
-      if (page >= 1 && page <= this.lastPage) {
-        window.scrollTo({ top: 0, behavior: 'smooth' }); 
-        this.getAuto(page); 
-      }
-    }
-  },created(){
-    this.getAuto();
-  }
-}
+    },
 
+    changePage(page) {
+      if (page >= 1 && page <= this.lastPage) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.getAuto(page);
+      }
+    },
+  },
+
+  created() {
+    this.getAuto();
+  },
+};
 </script>
 
 
 <template>
 
+  <div v-if="loading" class="page-overlay">
+    <div class="dot-loader">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+
   <main>
+
+    <div v-if="loading" class="loader-container">
+      <div class="dot-loader">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
 
     <div class="ricerca">
 
@@ -137,6 +157,52 @@ export default{
 </template>
 
 <style scoped>
+
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black; 
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Loader a pallini */
+.dot-loader span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 6px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation: bounce 1s infinite ease-in-out both;
+}
+
+.dot-loader span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.dot-loader span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+.dot-loader span:nth-child(3) {
+  animation-delay: 0s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+
+
 main{
   color:#FFFFFF;
   display: flex;
