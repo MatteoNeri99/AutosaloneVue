@@ -49,7 +49,7 @@ export default{
 
         <h1>Dove siamo?</h1>
         <p>Puoi trovarci in Via Piane, 20. <br> -66010 Fara Filiorum Petri</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2953.289463227177!2d14.18593947657567!3d42.250990641984544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1330537f504abfaf%3A0xeae8f80bc34f7f26!2sAutosalone%20Di%20Fulvio%20Giacomo!5e0!3m2!1sit!2sit!4v1743754355572!5m2!1sit!2sit" width="700" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2953.289463227177!2d14.18593947657567!3d42.250990641984544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1330537f504abfaf%3A0xeae8f80bc34f7f26!2sAutosalone%20Di%20Fulvio%20Giacomo!5e0!3m2!1sit!2sit!4v1743754355572!5m2!1sit!2sit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
       </div>
 
@@ -66,7 +66,7 @@ export default{
 
 main{
   padding:10rem 15rem;
-  background-color: rgb(170, 170, 170);
+  background-color: #f5f5f5;
 }
 
 .titolo{
@@ -74,6 +74,11 @@ main{
   font-size: 3rem;
   text-align: center;
   margin-bottom: 4rem;
+}
+
+iframe{
+  width: 700px;
+  height: 500px;
 }
 
 .flex{
@@ -118,6 +123,53 @@ button{
   background-color:  #f5f5f5;
   border:2px solid #D32F2F;
 
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding: 8rem 7rem;
+  }
+
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .titolo {
+    font-size: 2.5rem;
+    text-align: left;
+  }
+}
+
+/* MEDIA QUERY PER MOBILE */
+@media (max-width: 768px) {
+  main {
+    padding: 8rem 2rem;
+  }
+
+  .titolo {
+    font-size: 2rem;
+  }
+
+  iframe{
+    width: 400px;
+    height: 500px;
+  }
+
+  input,
+  textarea,
+  button {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
 }
 
 </style>

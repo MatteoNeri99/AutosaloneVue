@@ -355,16 +355,21 @@ export default{
 
   .descrizione {
     width: 90%;
-    margin-top: 1rem;
   }
 
-  .container {
-    width: 100%;
+  .container,
+  form {
+    max-width: 800px;
+    width: 90% !important;
+    margin-left: 0rem !important;
+    max-width: 100%;
   }
 
   form {
-    width: 100%;
+    
+    max-width: 800px !important;
     margin-left: 0;
+    margin-top: 2rem;
   }
 }
 
@@ -377,20 +382,17 @@ export default{
     padding: 0;
   }
 
-  .indietro,
-  .avanti{
-    width: 10px;
-    padding: 10px;
-
+  .carosello button{
+    padding: .5rem;
+    width: 40px;
   }
 
-  .avanti {
-    right: -5px;
+  .carosello .avanti img,
+  .carosello .indietro img {
+    width: 20px;
   }
 
-  .indietro {
-    left: -5px;
-  }
+  
 
   .caratteristiche {
     width: 90%;
@@ -426,10 +428,6 @@ export default{
     width: 80px;
   }
 
-  .avanti img,
-  .indietro img {
-    width: 30px;
-  }
 
   .prezzo {
     width: 150px;
@@ -441,11 +439,6 @@ export default{
     padding: 0.8rem;
   }
 
-  button {
-    width: 100%;
-    padding: 0.7rem;
-    font-size: 1rem;
-  }
 }
 
 </style>

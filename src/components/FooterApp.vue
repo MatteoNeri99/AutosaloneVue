@@ -16,7 +16,7 @@ export default{
 
     <ul class="indirizzo">
       <h3>Autosalone Di Fulvio Giacomo</h3>
-      <li>indirizzo: Via Piane N.20</li>
+      <li>Indirizzo: Via Piane N.20 <br>-66010 Fara Filiorum Petri</li>
       <li>Telefono: 0871 79710</li>
     </ul>
 
@@ -60,6 +60,11 @@ export default{
     </div>
 
     <hr>
+
+    <div class="diritti">
+      <p>Tutti i diritti sono riservati a   <span class="rosso">Autosalone Di fulvio Giacomo</span></p>
+      <p>Realizzato da <span class="rosso">Matteo Neri</span></p>
+    </div>
   </footer>
   
 </template>
@@ -74,6 +79,17 @@ footer {
   padding: 3rem 18rem;
 }
 
+.diritti{
+  display: flex;
+  margin-top: 1rem;
+}
+
+.rosso{
+  color:#D32F2F ;
+  margin-right: 2rem;
+}
+
+
 footer li {
   margin-bottom: 0.5rem;
   
@@ -81,6 +97,7 @@ footer li {
 
 footer h3 {
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 footer .orari {
@@ -100,19 +117,13 @@ footer hr {
 /* Responsive Design */
 @media screen and (max-width: 1024px) { /* Tablet */
   footer {
-    padding: 2rem 5rem;
-    flex-direction: column;
-    align-items: center;
-    
+    padding: 2rem 6rem;
+    flex-direction: column; 
   }
 
-  footer li {
-    margin-left: 1rem;
-    
-  }
   ul{
     margin-bottom: 1rem;
-
+    margin-left: 1rem;
   }
 
   footer .facebook,
@@ -124,6 +135,21 @@ footer hr {
 @media screen and (max-width: 768px) { /* Mobile */
   footer {
     padding: 2rem 2rem;
+    align-items: center;
+  }
+
+  .diritti{
+    flex-wrap: wrap;
+  }
+
+  ul{
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+  }
+
+
+  .diritti p{
+    margin-bottom: 1rem;
   }
 
   footer .facebook,

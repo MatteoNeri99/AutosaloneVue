@@ -181,7 +181,11 @@ main h2 {
 }
 
 .servizi {
-  background-color: #BDBDBD;
+  opacity: 0.8;
+  background-image: url('../../public/img/pexels-cottonbro-7019377.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: black;
   display: flex;
   flex-wrap: wrap;
@@ -192,6 +196,7 @@ main h2 {
 .servizi .serviziTitolo {
   width: 100%;
   margin-bottom: 2rem;
+  color: white;
 }
 
 .meccanico,
@@ -203,6 +208,7 @@ main h2 {
   border-radius: 20px;
   padding: 2rem;
   margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
 .meccanico h3,
@@ -345,17 +351,30 @@ article {
 /* Responsive Design */
 @media screen and (max-width: 1024px) { /* Tablet */
   .servizi {
-    padding: 1rem 5rem;
+    padding: 1rem 4rem;
+  }
+
+  .titolo h1 {
+    font-size: 2.2rem;
+    word-spacing: 0;
   }
 
   .meccanico,
   .carrozzeria {
-    width: 350px;
+    width: 400px;
     height: 280px;
   }
 
+
+  .meccanico h3,
+  .carrozzeria h3 {
+    font-size: 2rem;
+  }
+
   article {
-    width: calc((100% / 2) - 2rem);
+    width: 100% ;
+    margin-right: 0;
+    
   }
 
   .ultimeAuto {
@@ -365,6 +384,11 @@ article {
 }
 
 @media screen and (max-width: 768px) { /* Mobile */
+
+  main h2{
+    font-size: 2rem;
+  }
+
   .jumbotron {
     width: 100%; /* dimensione visibile */
     height: 360px; /* altezza del pezzo che vuoi vedere */
@@ -379,7 +403,8 @@ article {
   }
 
   .titolo h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    word-spacing: 0;
   }
 
   .servizi {

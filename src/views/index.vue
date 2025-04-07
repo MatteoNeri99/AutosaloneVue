@@ -80,7 +80,8 @@ export default{
       <input type="text" v-model="nome" name="modello" id="modello" placeholder="Modello...">
 
       <label for="carburante">Carburante</label>
-      <select name="carburante" id="" v-model="carburante" >
+
+      <select name="carburante" id="carburante" v-model="carburante" >
         <option value="">Tutti</option>
         <option value="1">Benzina</option>
         <option value="2" >Diesel</option>
@@ -187,12 +188,17 @@ main{
 }
 
 .pagination{
-  justify-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   margin-bottom: 2rem;
+ 
 
   button{
     background-color: #FFEB3B;
+    border-color: transparent;
     padding: 1rem;
     font-weight: bold;
     font-size: 1.3rem;
@@ -257,7 +263,7 @@ main{
     justify-content: center;
 
     h1 {
-      font-size: 1.7rem;
+      font-size: 1rem;
       text-transform: uppercase;
       font-weight: bold;
       text-align: center;
@@ -291,6 +297,7 @@ main{
       max-width: 1200px;
       display: flex;
       flex-direction: column;
+      align-items: start;
       margin-bottom: 2rem;
     }
   }
@@ -312,6 +319,7 @@ main{
       padding: 0.7rem;
       color: #FFFFFF;
       margin-bottom: 0.9rem;
+      display: block;
     }
 
     select {
@@ -321,6 +329,7 @@ main{
       padding: 0.7rem;
       color: #FFFFFF;
       margin-bottom: 0.9rem;
+      display: block;
     }
 
     button {
@@ -332,6 +341,87 @@ main{
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  main {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding-top: 10rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+  }
+
+  main h1 {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  main hr {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  main .condizione {
+    background-color: #030303;
+    color: white;
+    font-size: 1.2rem;
+    border-color: #D32F2F;
+    padding: 0 1rem;
+    align-self: center;
+    margin: 1rem 1rem 0 1rem;
+  }
+
+  main .index {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  main .flex {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  .ricerca {
+    padding: 1.5rem;
+    color: #FFFFFF;
+    font-size: 1rem;
+  }
+
+  .ricerca h2 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .ricerca input,
+  .ricerca select {
+    width: 100%;
+    background-color: #030303;
+    border: 2px solid #D32F2F;
+    padding: 0.7rem;
+    color: #FFFFFF;
+    margin-bottom: 0.9rem;
+  }
+
+  .ricerca button {
+    width: 100%;
+    background-color: #030303;
+    border: 2px solid #D32F2F;
+    color: #FFFFFF;
+    padding: 0.5rem;
+  }
+}
+
+
+
+
 
 
 </style>
