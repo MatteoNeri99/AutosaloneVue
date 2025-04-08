@@ -15,6 +15,9 @@ export default{
         .then(response => {
           this.autoList = response.data; 
           console.log(this.autoList)
+          this.$nextTick(() => {
+          this.observeVisibility(); // Chiama l'osservatore dopo che Vue ha completato il rendering
+          });
         })
         .catch(error => {
           console.error("Errore nel recupero delle auto:", error);
@@ -22,10 +25,46 @@ export default{
     },
     formatNumber(value) {
       return value.toLocaleString('it-IT'); // Formatta il numero con i puntini
+    },
+    observeVisibility() {
+      const options = {
+        root: null, // Usare la finestra di visualizzazione
+        rootMargin: '0px',
+        threshold: 0.5 // Quando il 50% dell'elemento è visibile
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible'); // Aggiungi la classe "visible" quando l'elemento è visibile
+            console.log('Elemento visibile', entry.target);
+            observer.unobserve(entry.target); // Interrompe l'osservazione dopo l'animazione
+          }
+        });
+      }, options);
+
+      console.log('Osservatore inizializzato');
+
+      // Osserva gli .article
+      const articles = document.querySelectorAll('.article');
+      console.log('Articoli trovati:', articles);
+      articles.forEach(article => {
+        observer.observe(article);
+      });
+
+      // Osserva .meccanico e .carrozzeria
+      const meccanico = document.querySelector('.meccanico');
+      const carrozzeria = document.querySelector('.carrozzeria');
+
+      if (meccanico) observer.observe(meccanico);
+      if (carrozzeria) observer.observe(carrozzeria);
     }
+
   },created() {
     this.getUltimeAuto();
-  },
+  },mounted() {
+    this.observeVisibility();
+  }
 }
 
 </script>
@@ -50,7 +89,7 @@ export default{
 
       
 
-      <article  v-for="auto in autoList" :key="auto.id">
+      <article class="article"  v-for="auto in autoList" :key="auto.id">
     
         <div class="img">
           <p class="prezzo">{{ formatNumber(auto.prezzo)}} €</p>
@@ -141,7 +180,48 @@ export default{
 </template>
 
 <style scoped>
+/* animazioni */
+.meccanico,
+.carrozzeria {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 2s ease-out, transform 1s ease-out;
+}
 
+.meccanico.visible,
+.carrozzeria.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.meccanico {
+  transform: translateX(-100%);
+}
+
+.carrozzeria {
+  transform: translateX(100%);
+}
+
+.meccanico.visible {
+  transform: translateX(0);
+}
+
+.carrozzeria.visible {
+  transform: translateX(0);
+}
+
+.article {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.article.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* animazioni */
 main {
   background-color: #f5f5f5;
 }
@@ -304,7 +384,6 @@ main h2 {
 
 img {
   width: 100%;
- 
 }
 
 .imgAuto {
@@ -348,6 +427,41 @@ article {
   box-shadow: 5px 5px 10px black;
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .servizi {
+    padding: 1rem 4rem;  /* Aggiusta i margini laterali */
+  }
+
+  .jumbotron{
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .titolo h1 {
+    font-size: 2.5rem;
+    word-spacing: 0;
+  }
+
+  .meccanico {
+    transform: translateX(-50%); /* Sposta leggermente meno verso sinistra */
+  }
+
+  .carrozzeria {
+    transform: translateX(50%); /* Sposta leggermente meno verso destra */
+  }
+
+  .meccanico.visible {
+    transform: translateX(0); /* Visibile al suo posto */
+  }
+
+  .carrozzeria.visible {
+    transform: translateX(0); /* Visibile al suo posto */
+  }
+
+
+}
+
 /* Responsive Design */
 @media screen and (max-width: 1024px) { /* Tablet */
   .servizi {
@@ -359,12 +473,17 @@ article {
     word-spacing: 0;
   }
 
+  .jumbotron{
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+  }
+
   .meccanico,
   .carrozzeria {
     width: 400px;
     height: 280px;
   }
-
 
   .meccanico h3,
   .carrozzeria h3 {
@@ -372,34 +491,43 @@ article {
   }
 
   article {
-    width: 100% ;
+    width: 100%;
     margin-right: 0;
-    
   }
 
   .ultimeAuto {
     width: 100%;
-    padding: 1rem;
+    padding: 3rem;
+  }
+
+  .meccanico,
+  .carrozzeria {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    opacity: 1;  /* Aggiungi questa regola per garantire che l'elemento sia visibile */
+    transform: translateX(0); /* Imposta la posizione iniziale per l'animazione */
   }
 }
 
 @media screen and (max-width: 768px) { /* Mobile */
-
-  main h2{
+  main h2 {
     font-size: 2rem;
   }
 
   .jumbotron {
-    width: 100%; /* dimensione visibile */
-    height: 360px; /* altezza del pezzo che vuoi vedere */
+    width: 100%;
+    height: 360px;
     overflow: hidden;
     position: relative;
   }
 
   .jumbotron img {
     position: absolute;
-    top: 0; /* spinge l'immagine verso il basso */
-    width: 100%; /* oppure una larghezza fissa */
+    top: 0;
+    width: 100%;
   }
 
   .titolo h1 {
@@ -416,7 +544,12 @@ article {
   .meccanico,
   .carrozzeria {
     width: 90%;
+    max-width: 400px;
     height: auto;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    opacity: 1;  /* Aggiungi questa regola per garantire che l'elemento sia visibile */
+    transform: translateX(0); /* Imposta la posizione iniziale per l'animazione */
   }
 
   article {
@@ -429,5 +562,4 @@ article {
     align-items: center;
   }
 }
-
 </style>

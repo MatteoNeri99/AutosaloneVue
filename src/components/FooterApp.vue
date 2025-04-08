@@ -41,7 +41,7 @@ export default{
         Sabato:	08:30–13, 15:30–18:30
       </li>
       <li>
-        Domenica:	chiuso
+        Domenica: Chiuso
       </li>
     </ul>
 
@@ -113,6 +113,63 @@ footer hr {
   width: 100%;
   margin-top: 2rem;
 }
+
+.indirizzo{
+  list-style: none;
+}
+
+
+/* Per schermi tra 1024px e 1440px */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+
+footer {
+  background-color: #252525;
+  color: #FFFF;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 3rem 6rem; /* Aggiustato il padding orizzontale per non essere troppo largo */
+}
+
+footer ul {
+  margin-bottom: 1.5rem; /* Aggiunto margine tra gli ul */
+}
+
+footer .diritti {
+  display: flex;
+  margin-top: 1rem;
+}
+
+footer .rosso {
+  color: #D32F2F;
+  margin-right: 2rem;
+}
+
+footer li {
+  margin-bottom: 0.5rem;
+}
+
+footer h3 {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+footer .orari {
+  word-spacing: 0.5rem;
+}
+
+footer .facebook,
+footer .instagram {
+  width: 45px;
+}
+
+footer hr {
+  width: 100%;
+  margin-top: 2rem;
+}
+}
+
+
 
 /* Responsive Design */
 @media screen and (max-width: 1024px) { /* Tablet */

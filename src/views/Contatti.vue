@@ -125,6 +125,78 @@ button{
 
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+
+main {
+  padding: 10rem 4rem; /* Ridotto il padding per dare più spazio sugli schermi più piccoli */
+  background-color: #f5f5f5;
+}
+
+.titolo {
+  font-weight: bold;
+  font-size: 2rem; /* Ridotto il font per adattarsi meglio */
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+iframe {
+  width: 100%; /* Rende l'iframe responsive */
+  max-width: 600px; /* Impostato un massimo per non espandersi troppo */
+  height: 400px; /* Ridotto per adattarsi meglio */
+  margin-bottom: 2rem; /* Spazio tra iframe e altri elementi */
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between; /* Gli elementi saranno disposti uno accanto all'altro */
+  flex-wrap: wrap; /* Consente agli elementi di andare a capo se non ci sta più spazio */
+  gap: 1.5rem; /* Spazio tra gli elementi */
+}
+
+.map-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+h1 {
+  width: 100%;
+  font-size: 2rem; /* Ridotto per migliorare la leggibilità */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4rem; /* Ridotto il margine destro per ottimizzare lo spazio */
+}
+
+p {
+  margin-bottom: 1.5rem; /* Ridotto il margine inferiore */
+}
+
+textarea,
+input {
+  margin-bottom: 1.5rem; /* Ridotto il margine per adattarsi meglio */
+  padding: 1.2rem; /* Ridotto il padding per non occupare troppo spazio */
+  background-color: #f5f5f5;
+  border: 2px solid #D32F2F;
+  font-size: 1rem; /* Ridotto il font */
+}
+
+button {
+  margin-bottom: 1.5rem; /* Ridotto il margine inferiore */
+  padding: 1.2rem; /* Ridotto il padding */
+  width: 150px; /* Larghezza ridotta per meglio adattarsi */
+  background-color: #f5f5f5;
+  border: 2px solid #D32F2F;
+  font-size: 1rem; /* Ridotto il font */
+}
+
+.flex > * {
+  flex: 1 1 45%; /* Ogni elemento si occupa del 45% della larghezza e va a capo se necessario */
+}
+}
+
 @media (max-width: 1024px) {
   main {
     padding: 8rem 7rem;

@@ -329,7 +329,183 @@ export default{
   }
 }
 
+
 /* Responsive Design */
+
+@media screen and (max-width: 1400px) and (min-width: 1024px) {
+
+.flex {
+  display: flex;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 9rem auto 0;
+  padding: 0 1rem;
+}
+
+.caratteristiche {
+  color: white;
+  margin-top: 6.3rem;
+  width: 37%; /* Mantenuto il 40%, ma ridotto per adattarsi meglio */
+  max-width: 450px; /* Ridotto il massimo per una maggiore compatibilità */
+  background-color: #252525;
+  padding: 1.2rem; /* Ridotto il padding */
+  border-radius: 20px;
+  border: 2px solid #D32F2F;
+  position: relative;
+}
+
+.caratteristiche h2 {
+  font-weight: bold;
+  font-size: 1.8rem; /* Ridotto il font-size */
+}
+
+.car-p {
+  font-size: 1.2rem; /* Ridotto il font-size */
+}
+
+.prezzo {
+  text-align: center;
+  background-color: #D32F2F;
+  width: 180px; /* Ridotto per adattarsi meglio */
+  padding: 0.4rem; /* Ridotto il padding */
+  font-size: 1.5rem; /* Ridotto il font-size */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 0 0 15px 0;
+}
+
+.carosello {
+  color: white;
+  margin-top: 2rem;
+  position: relative;
+  width: 55%;
+  max-width: 700px; /* Ridotto per la larghezza del carosello */
+  margin-right: 2rem; /* Ridotto il margine destro */
+}
+
+.carosello h1 {
+  font-weight: bold;
+  font-size: 2.2rem; /* Ridotto il font-size */
+  margin-bottom: 1.5rem;
+}
+
+.carosello .car-img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid white;
+}
+
+.miniature-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Ridotto il gap */
+  margin-top: 8px;
+  overflow-x: auto;
+}
+
+.miniature-img {
+  width: 80px; /* Ridotto per la visualizzazione delle miniature */
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.avanti,
+.indietro {
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.avanti img,
+.indietro img {
+  width: 30px; /* Ridotto il dimensionamento delle frecce */
+}
+
+.avanti {
+  right: 5px;
+}
+
+.indietro {
+  left: 5px;
+}
+
+.avanti:hover,
+.indietro:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.descrizione {
+  color: white;
+  display: flex;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 7rem auto;
+  padding: 0 3rem;
+}
+
+.descrizione h1 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1.6rem; /* Ridotto il font-size */
+}
+
+.container {
+  width: 60%;
+  max-width: 700px; /* Ridotto per la container */
+}
+
+form {
+  width: 35%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+form p {
+  margin-bottom: 1.5rem; /* Ridotto il margine inferiore */
+}
+
+input,
+textarea {
+  border: 1px solid #D32F2F;
+  background-color: #252525;
+  padding: 1rem;
+  margin-bottom: 1.5rem; /* Ridotto il margine */
+  color: white;
+  width: 100%;
+}
+
+button {
+  width: 100%; /* Il bottone ora occupa tutta la larghezza disponibile */
+  background-color: #252525;
+  border-color: #D32F2F;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #D32F2F;
+}
+}
+
 
 /* Tablet */
 @media (max-width: 1024px) {

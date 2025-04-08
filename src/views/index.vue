@@ -50,7 +50,7 @@ export default {
       })
       .finally(() => {
         const elapsed = Date.now() - startTime;
-        const remaining = 1500 - elapsed;
+        const remaining = 1000 - elapsed;
         setTimeout(() => {
           this.loading = false;
         }, remaining > 0 ? remaining : 0);
@@ -63,6 +63,7 @@ export default {
         this.getAuto(page);
       }
     },
+    
   },
 
   created() {
@@ -157,7 +158,7 @@ export default {
 </template>
 
 <style scoped>
-
+/* animazione */
 .page-overlay {
   position: fixed;
   top: 0;
@@ -171,7 +172,6 @@ export default {
   align-items: center;
 }
 
-/* Loader a pallini */
 .dot-loader span {
   display: inline-block;
   width: 12px;
@@ -201,7 +201,7 @@ export default {
   }
 }
 
-
+/* animazione */
 
 main{
   color:#FFFFFF;
@@ -214,6 +214,7 @@ main{
     font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: bold;
+    align-self: center;
 
   }
 
@@ -316,17 +317,101 @@ main{
   }
 }
 
-/* Solo per dispositivi mobili e tablet */
-@media screen and (max-width: 1024px) {
+/* schermi medio-grandi */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  main {
+    color: #FFFFFF;
+    display: flex; 
+    max-width: 1200px;
+    padding: 9rem 0rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    justify-content: space-between;
+  }
 
+
+  .ricerca {
+    padding: 7rem 0rem;
+    background-color: #030303;
+    border-radius: 8px;
+  }
+
+  .index{
+    max-width: 900px;
+  }
+
+  hr{
+    width: 900px !important;
+    margin-bottom: 2rem;
+
+  }
+
+
+  .index {
+    width: 900px;
+    margin-left: 2rem;
+  }
+
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .pagination button {
+    background-color: #FFEB3B;
+    border-color: transparent;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: 20px;
+  }
+
+  .pagination span {
+    margin: 0 1rem;
+  }
+
+ 
+  .ricerca input,
+  .ricerca select {
+    width: 270px ; 
+    background-color: #030303;
+    border: 2px solid #D32F2F;
+    padding: 0.7rem;
+    color: #FFFFFF;
+    margin-bottom: 0.9rem;
+    font-size: 1rem;
+  }
+
+
+  .ricerca button {
+    width: 100%;
+    background-color: #030303;
+    border: 2px solid #D32F2F;
+    color: #FFFFFF;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+}
+
+
+
+/* tablet */
+@media screen and (max-width: 1024px) {
   main {
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    max-width: 100%; /* Utilizza tutta la larghezza disponibile */
     padding-top: 10rem;
+    margin: 0 auto;
     margin-bottom: 3rem;
     justify-content: center;
+    align-items: center; /* Centra il contenuto orizzontalmente */
 
     h1 {
       font-size: 1rem;
@@ -360,7 +445,7 @@ main{
     }
 
     .flex {
-      max-width: 1200px;
+      width: 100%; /* Fa sì che gli elementi flessibili si adattino alla larghezza */
       display: flex;
       flex-direction: column;
       align-items: start;
@@ -369,45 +454,43 @@ main{
   }
 
   .ricerca {
+    width: 100%; /* Occupa tutta la larghezza disponibile */
     padding: 2rem;
     color: #FFFFFF;
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Aggiungi spazio tra gli input */
 
     h2 {
       margin-bottom: 1rem;
       font-weight: bold;
     }
 
-    input {
-      width: 300px;
+    input, select {
+      width: 100%;
       background-color: #030303;
       border: 2px solid #D32F2F;
       padding: 0.7rem;
       color: #FFFFFF;
       margin-bottom: 0.9rem;
       display: block;
-    }
-
-    select {
-      width: 300px;
-      background-color: #030303;
-      border: 2px solid #D32F2F;
-      padding: 0.7rem;
-      color: #FFFFFF;
-      margin-bottom: 0.9rem;
-      display: block;
+      font-size: 1rem;
     }
 
     button {
-      width: 90px;
       background-color: #030303;
       border: 2px solid #D32F2F;
       color: #FFFFFF;
-      padding: 0.5rem;
+      padding: 0.7rem;
+      font-size: 1rem;
+      border-radius: 5px;
     }
   }
 }
 
+
+/* mobile*/
 @media screen and (max-width: 768px) {
   main {
     color: #FFFFFF;
@@ -484,10 +567,5 @@ main{
     padding: 0.5rem;
   }
 }
-
-
-
-
-
 
 </style>
