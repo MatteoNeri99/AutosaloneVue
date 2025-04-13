@@ -58,6 +58,9 @@ export default{
 
       if (meccanico) observer.observe(meccanico);
       if (carrozzeria) observer.observe(carrozzeria);
+
+      const loghi = document.querySelectorAll('.marchi .loghi');
+      loghi.forEach(logo => observer.observe(logo)); // 👈 aggiunto
     }
 
   },created() {
@@ -73,7 +76,7 @@ export default{
   <main>
     <div class="jumbotron">
 
-      <img src="../../public/img/34EB6D90-9352-41FC-92AF-3753AC2DF978.jpg" alt="">
+      <img src="../../public/img/34EB6D90-9352-41FC-92AF-3753AC2DF978 (1).jpg" alt="">
 
     </div>
 
@@ -138,6 +141,20 @@ export default{
       <div class="button">
         <router-link :to="{ name: 'auto'}" >Mostra tutte le auto</router-link>
       </div>
+
+    </div>
+
+    <div class="marchi">
+
+      <img class="loghi" src="../../public/img/Alfa_Romeo_2015.svg.png" alt="alfa romeo logo">
+
+      <img class="loghi" src="../../public/img/Logo_della_Fiat.svg.png" alt="Fiat logo">
+
+      <img class="loghi" src="../../public/img/Logo_della_Lancia.svg.png" alt="Lancia logo">
+
+      <img class="loghi jeep" src="../../public/img/Jeep_logo.svg" alt="">
+
+      <img class="loghi" src="../../public/img/Abarth_logo.png" alt="">
 
     </div>
 
@@ -221,9 +238,27 @@ export default{
   transform: translateY(0);
 }
 
-/* animazioni */
+.marchi .loghi {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.marchi .loghi.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.marchi .loghi:nth-child(1).visible { transition-delay: 0.2s; }
+.marchi .loghi:nth-child(2).visible { transition-delay: 0.4s; }
+.marchi .loghi:nth-child(3).visible { transition-delay: 0.6s; }
+.marchi .loghi:nth-child(4).visible { transition-delay: 0.8s; }
+.marchi .loghi:nth-child(5).visible { transition-delay: 1s; }
+
+
+/* page */
 main {
-  background-color: #f5f5f5;
+ background: linear-gradient(to right, #ffffff, #d3d3d3);
 }
 
 main h2 {
@@ -301,7 +336,7 @@ main h2 {
 
 .meccanico img,
 .carrozzeria img {
-  width: 35px;
+  width: 45px;
 }
 
 .meccanico p,
@@ -391,10 +426,22 @@ img {
   border-radius: 10px 10px 0 0;
 }
 
+.ultimeAuto .article:nth-child(2) { 
+  margin-left: 2rem; 
+  margin-right: 2rem;
+}
+.ultimeAuto .article:nth-child(5) { 
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.ultimeAuto .article:nth-child(8) { 
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 article {
   margin-bottom: 2rem;
   width: calc((100% / 3) - 2rem);
-  margin-right: 2rem;
   background-color: #252525;
   border: transparent;
   border-radius: 10px;
@@ -407,7 +454,6 @@ article {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  background-color: #f5f5f5;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
@@ -425,6 +471,34 @@ article {
   background-color: #D32F2F;
   padding: 0.7rem;
   box-shadow: 5px 5px 10px black;
+}
+
+.marchi{
+  background: linear-gradient(to right, #ffffff, #e9e9e9);
+  display: flex;
+  padding: 5rem;
+  justify-content: center;
+  
+}
+
+.loghi{
+  width: 140px;
+  height: 140px;
+}
+
+.marchi .loghi:nth-child(2) { 
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.marchi .loghi:nth-child(4) { 
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.marchi .jeep{
+  width: 160px;
+  height: 90px;
+  align-self: center;
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
@@ -467,6 +541,20 @@ article {
   .servizi {
     padding: 1rem 4rem;
   }
+
+  .ultimeAuto .article:nth-child(2) { 
+    margin-left: 0; 
+    margin-right: 0;
+  }
+  .ultimeAuto .article:nth-child(5) { 
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .ultimeAuto .article:nth-child(8) { 
+    margin-left: 0;
+    margin-right: 0;
+  }
+
 
   .titolo h1 {
     font-size: 2.2rem;
@@ -517,6 +605,29 @@ article {
     font-size: 2rem;
   }
 
+  .marchi{
+    padding: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .loghi{
+    width: 70px;
+    height: 50px;
+  }
+
+  .marchi .loghi:nth-child(2) { 
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .marchi .loghi:nth-child(4) { 
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .marchi .jeep{
+    width: 100px;
+  }
+
   .jumbotron {
     width: 100%;
     height: 360px;
@@ -554,12 +665,21 @@ article {
 
   article {
     width: 100%;
-    margin-right: 0;
+   
   }
+
 
   .ultimeAuto {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 1rem;
   }
+
+  .marchi .jeep{
+  width: 60px;
+  height: 30px;
+  align-self: center;
+}
+
 }
 </style>

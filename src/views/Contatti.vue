@@ -66,7 +66,7 @@ export default{
 
 main{
   padding:10rem 15rem;
-  background-color: #f5f5f5;
+  background: linear-gradient(to right, #ffffff, #d3d3d3);
 }
 
 .titolo{

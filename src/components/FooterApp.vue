@@ -18,6 +18,7 @@ export default{
       <h3>Autosalone Di Fulvio Giacomo</h3>
       <li>Indirizzo: Via Piane N.20 <br>-66010 Fara Filiorum Petri</li>
       <li>Telefono: 0871 79710</li>
+      <li>Email: difulviogiacomo@virgilio.it</li>
     </ul>
 
     <ul class="orari">
@@ -62,7 +63,7 @@ export default{
     <hr>
 
     <div class="diritti">
-      <p>Tutti i diritti sono riservati a   <span class="rosso">Autosalone Di fulvio Giacomo</span></p>
+      <p>Tutti i diritti sono riservati a Copyright ©  <span class="rosso">Autosalone Di fulvio Giacomo</span></p>
       <p>Realizzato da <span class="rosso">Matteo Neri</span></p>
     </div>
   </footer>
