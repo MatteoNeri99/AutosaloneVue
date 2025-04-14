@@ -9,7 +9,7 @@ export default{
   },methods:{
     async sendMessage() {
       try {
-        const response = await axios.post('http://localhost:8000/api/messages', this.form);
+        const response = await axios.post('https://autosalone-production.up.railway.app//api/messages', this.form);
         alert(response.data.message);
         this.form = {
         nome: '',

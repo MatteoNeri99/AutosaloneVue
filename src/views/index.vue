@@ -28,7 +28,7 @@ export default {
       this.loading = true;
       const startTime = Date.now();
 
-      axios.get('http://127.0.0.1:8000/api/auto', {
+      axios.get('https://autosalone-production.up.railway.app/api/auto', {
         params: {
           marca: this.marca,
           modello: this.nome,
