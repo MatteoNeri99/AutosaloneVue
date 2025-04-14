@@ -48,7 +48,7 @@ export default{
       },
       async sendMessage() {
       try {
-        const response = await axios.post('https://autosalone-production.up.railway.app//api/messages', this.form);
+        const response = await axios.post('https://autosalone-production.up.railway.app/api/messages', this.form);
         alert(response.data.message);
         this.form = {
         nome: '',
