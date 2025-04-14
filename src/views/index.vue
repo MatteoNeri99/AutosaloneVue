@@ -222,6 +222,13 @@ main{
     display: inline-block;
   }
 
+  input{
+    -webkit-appearance: none; /* Rimuove lo stile nativo di Safari */
+    -moz-appearance: none;    /* Rimuove lo stile nativo su Firefox */
+    appearance: none;    
+
+  }
+
   select {
     -webkit-appearance: none; /* Rimuove lo stile nativo di Safari */
     -moz-appearance: none;    /* Rimuove lo stile nativo su Firefox */
