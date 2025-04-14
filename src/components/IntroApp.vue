@@ -25,7 +25,7 @@
 
 <template>
     <div class="intro-container" ref="container">
-      <img ref="introImg" src="../../public/img/Screenshot 2025-04-07 161457.png" class="intro-img" />
+      <img ref="introImg" src="/img/Screenshot 2025-04-07 161457.png" class="intro-img" />
     </div>
 </template>
   

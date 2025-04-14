@@ -76,7 +76,7 @@ export default{
   <main>
     <div class="jumbotron">
 
-      <img src="../../public/img/34EB6D90-9352-41FC-92AF-3753AC2DF978 (1).jpg" alt="">
+      <img src="/img/34EB6D90-9352-41FC-92AF-3753AC2DF978 (1).jpg" alt="">
 
     </div>
 
@@ -109,17 +109,17 @@ export default{
           <div class="icone">
 
             <div class="icone">
-              <img src="../../../public/img/date-svgrepo-com (1).svg" alt="">
+              <img src="/img/date-svgrepo-com (1).svg" alt="">
               <p>{{ auto.anno }}</p> 
             </div>
 
             <div class="icone">
-              <img class="engine" src="../../../public/img/engine-svgrepo-com (1).svg" alt="">
+              <img class="engine" src="/img/engine-svgrepo-com (1).svg" alt="">
               <p>{{ formatNumber(auto.cilindrata) }}</p>
             </div>
 
             <div class="icone">
-              <img class="km" src="../../../public/img/speed-svgrepo-com (6).svg" alt="">
+              <img class="km" src="/img/speed-svgrepo-com (6).svg" alt="">
               <p>{{ formatNumber(auto.km) }}</p> 
             </div>
         
@@ -146,15 +146,15 @@ export default{
 
     <div class="marchi">
 
-      <img class="loghi" src="../../public/img/Alfa_Romeo_2015.svg.png" alt="alfa romeo logo">
+      <img class="loghi" src="/img/Alfa_Romeo_2015.svg.png" alt="alfa romeo logo">
 
-      <img class="loghi" src="../../public/img/Logo_della_Fiat.svg.png" alt="Fiat logo">
+      <img class="loghi" src="/img/Logo_della_Fiat.svg.png" alt="Fiat logo">
 
-      <img class="loghi" src="../../public/img/Logo_della_Lancia.svg.png" alt="Lancia logo">
+      <img class="loghi" src="/img/Logo_della_Lancia.svg.png" alt="Lancia logo">
 
-      <img class="loghi jeep" src="../../public/img/Jeep_logo.svg" alt="">
+      <img class="loghi jeep" src="/img/Jeep_logo.svg" alt="">
 
-      <img class="loghi" src="../../public/img/Abarth_logo.png" alt="">
+      <img class="loghi" src="/img/Abarth_logo.png" alt="">
 
     </div>
 
@@ -166,7 +166,7 @@ export default{
 
       <div class="meccanico">
 
-        <h3><img src="../../public/img/wrench-2-svgrepo-com.svg" alt=""> Meccanico</h3>
+        <h3><img src="/img/wrench-2-svgrepo-com.svg" alt=""> Meccanico</h3>
 
         <div class="flex">
           
@@ -179,7 +179,7 @@ export default{
 
       <div class="carrozzeria">
 
-        <h3><img src="../../public/img/spray-can-svgrepo-com.svg" alt=""> Carrozzeria</h3>
+        <h3><img src="/img/spray-can-svgrepo-com.svg" alt=""> Carrozzeria</h3>
 
         <div class="flex">
           

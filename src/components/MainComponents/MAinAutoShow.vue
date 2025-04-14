@@ -73,9 +73,9 @@ export default{
     <div class="carosello">
       <h1>{{ auto.marca }} {{ auto.modello }}</h1>
 
-      <button class="indietro" @click="imgIncrement"><img src="../../../public/img/back-svgrepo-com.svg" alt=""></button>
+      <button class="indietro" @click="imgIncrement"><img src="/img/back-svgrepo-com.svg" alt=""></button>
       <img  v-if="auto.immagini && auto.immagini.length" :src="auto.immagini[currentIndex]" class="car-img" />
-      <button class="avanti" @click="imgDecrement"><img src="../../../public/img/next-svgrepo-com (3).svg" alt=""></button>
+      <button class="avanti" @click="imgDecrement"><img src="/img/next-svgrepo-com (3).svg" alt=""></button>
 
       <div class="miniature-gallery">
         <div v-for="(img, index) in auto.immagini" :key="index" @click="currentIndex = index" class="miniature">

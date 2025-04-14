@@ -19,7 +19,7 @@ export default{
 
       <div class="flex">
 
-        <img src="../../public/img/C487914F-36DB-48D9-8265-9FE137948C61.jpg" alt="">
+        <img src="/img/C487914F-36DB-48D9-8265-9FE137948C61.jpg" alt="">
 
         <p>Buongiorno,oggi vogliamo raccontarvi la storia di un emigrante abruzzese che è riuscito a costruire qualcosa di grande con impegno e passione: Nicola Di Fulvio, il fondatore di tutto.<br>
 
@@ -42,13 +42,13 @@ export default{
         Terminati gli studi, il 15 settembre 1990 – una data simbolica per l’intera famiglia – Giacomo Di Fulvio inaugura ufficialmente l’Autosalone Di Fulvio Giacomo. Nonostante la giovane età, aveva già una buona esperienza alle spalle: durante gli anni scolastici, tra una lezione e l’altra, si dedicava con entusiasmo alla vendita di auto. È in questo stesso periodo che conosce Claudia, che diventerà sua moglie.
         </p>
 
-        <img src="../../public/img/3D0DD4D5-6B09-4CFF-B710-E1F1657271AB.jpg" alt="" class="imgDx" >
+        <img src="/img/3D0DD4D5-6B09-4CFF-B710-E1F1657271AB.jpg" alt="" class="imgDx" >
 
       </div>
      
       <div class="flex">
 
-        <img class="salone-nuovo" src="../../public/img/34EB6D90-9352-41FC-92AF-3753AC2DF978.jpg" alt="">
+        <img class="salone-nuovo" src="/img/34EB6D90-9352-41FC-92AF-3753AC2DF978.jpg" alt="">
 
         <p>Il 15 settembre 2002, esattamente dodici anni dopo l’apertura dell’autosalone, nasce il loro primo figlio, Nicola, e qualche anno più tardi arriva anche Chiara. <br>
         Nel 2021, dopo il diploma, Nicola sceglie di entrare nell’azienda di famiglia, seguendo le orme del padre e del nonno. Come lo zio Angelo, anche lui ha una grande passione per le automobili, ed è pronto a portare avanti questa storia fatta di lavoro, famiglia e cuore.</p>

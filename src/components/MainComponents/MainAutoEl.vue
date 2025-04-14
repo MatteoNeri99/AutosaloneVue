@@ -46,17 +46,17 @@ export default{
       <div class="icone">
 
         <div class="icone">
-          <img src="../../../public/img/date-svgrepo-com (1).svg" alt="">
+          <img src="/img/date-svgrepo-com (1).svg" alt="">
           <p>{{ auto.anno }}</p> 
         </div>
 
         <div class="icone">
-          <img class="engine" src="../../../public/img/engine-svgrepo-com (1).svg" alt="">
+          <img class="engine" src="/img/engine-svgrepo-com (1).svg" alt="">
           <p>{{ formatNumber(auto.cilindrata) }}</p>
         </div>
 
         <div class="icone">
-          <img class="km" src="../../../public/img/speed-svgrepo-com (6).svg" alt="">
+          <img class="km" src="/img/speed-svgrepo-com (6).svg" alt="">
           <p>{{ formatNumber(auto.km) }}</p> 
         </div>
         

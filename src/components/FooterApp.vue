@@ -50,11 +50,11 @@ export default{
 
       <h3>Social Network:</h3>
       <a href="https://www.facebook.com/autosalonedifulviogiacomo/?locale=it_IT">
-        <img src="../../public/img/social-facebook-svgrepo-com.svg" alt="" class="facebook">
+        <img src="/img/social-facebook-svgrepo-com.svg" alt="" class="facebook">
       </a>
       
       <a href="https://www.instagram.com/autosalone_di_fulvio_giacomo/">
-        <img src="../../public/img/social-instagram-svgrepo-com.svg" alt="" class="instagram">
+        <img src="/img/social-instagram-svgrepo-com.svg" alt="" class="instagram">
       </a>
       
 

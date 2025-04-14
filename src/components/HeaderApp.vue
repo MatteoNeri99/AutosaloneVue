@@ -24,7 +24,7 @@ export default {
 <template>
   <header>
     <div class="logo">
-      <img src="../../public/img/Screenshot_2025-03-28_113325-removebg-preview.png" alt="Logo" />
+      <img src="/img/Screenshot_2025-03-28_113325-removebg-preview.png" alt="Logo" />
     </div>
 
     <!-- Icona Menu per Mobile -->
