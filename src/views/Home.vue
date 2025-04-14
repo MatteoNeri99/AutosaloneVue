@@ -11,7 +11,7 @@ export default{
   },methods: {
     
     getUltimeAuto() {
-      axios.get('https://autosalone-production.up.railway.app//api/ultime-auto') 
+      axios.get('https://autosalone-production.up.railway.app/api/ultime-auto') 
         .then(response => {
           this.autoList = response.data; 
           console.log(this.autoList)
