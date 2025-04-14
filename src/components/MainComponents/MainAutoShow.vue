@@ -13,7 +13,7 @@ export default{
     }
   },methods:{
         getAuto(){
-          axios.get(`https://autosalone-production.up.railway.app//api/auto/${this.id}`)
+          axios.get(`https://autosalone-production.up.railway.app/api/auto/${this.id}`)
         .then((response) => {
           this.auto = response.data;
           console.log(response.data)
