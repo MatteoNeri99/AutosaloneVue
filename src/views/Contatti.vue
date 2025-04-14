@@ -66,10 +66,14 @@ export default{
 
 main{
   padding:10rem 15rem;
+  color: black;
   background: linear-gradient(to right, #ffffff, #d3d3d3);
 }
 
-form::placeholder{
+input::placeholder{
+  color: black;
+}
+textarea::placeholder{
   color: black;
 }
 
