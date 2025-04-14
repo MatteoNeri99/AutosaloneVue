@@ -69,6 +69,10 @@ main{
   background: linear-gradient(to right, #ffffff, #d3d3d3);
 }
 
+form::placeholder{
+  color: black;
+}
+
 .titolo{
   font-weight: bold;
   font-size: 3rem;
