@@ -219,7 +219,9 @@ main{
   }
 
   select {
-    border-radius: 0; /* Cambia il valore come preferisci */
+    -webkit-appearance: none; /* Rimuove lo stile nativo di Safari */
+    -moz-appearance: none;    /* Rimuove lo stile nativo su Firefox */
+    appearance: none;        
   }
 
   hr{
