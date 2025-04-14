@@ -1,5 +1,5 @@
 <script>
-import MainAutoShow from '../components/MainComponents/MainAutoShow.vue';
+import MainAutoShow from '@/components/MainComponents/MainAutoShow.vue';
 
 export default{
   props:['id'],
@@ -17,14 +17,7 @@ export default{
 </script>
 
 <template>
-
- 
-    <MainAutoShow :id = 'id'/>
-
-  
-  
-
- 
+  <MainAutoShow :id = 'id'/>
 </template>
 
 <style scoped>
