@@ -218,6 +218,10 @@ main{
 
   }
 
+  select {
+    border-radius: 0; /* Cambia il valore come preferisci */
+  }
+
   hr{
     width: 1170px;
     margin-bottom: 2rem;
