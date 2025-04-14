@@ -125,6 +125,7 @@ input{
 }
 
 button{
+  color: black;
   margin-bottom:2rem;
   padding: 1.4rem;
   width: 180px;
