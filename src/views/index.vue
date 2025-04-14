@@ -218,6 +218,10 @@ main{
 
   }
 
+  label{
+    display: inline-block;
+  }
+
   select {
     -webkit-appearance: none; /* Rimuove lo stile nativo di Safari */
     -moz-appearance: none;    /* Rimuove lo stile nativo su Firefox */
