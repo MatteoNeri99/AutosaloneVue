@@ -312,6 +312,7 @@ main{
     padding: 0.7rem;
     color: #FFFFFF;
     margin-bottom: 0.9rem;
+    border-radius: 0;
   }
 
   select{
