@@ -24,7 +24,13 @@ export default {
 <template>
   <header>
     <div class="logo">
-      <img src="/img/Screenshot_2025-03-28_113325-removebg-preview.png" alt="Logo" />
+
+      <router-link :to="{ name: 'home' }" >
+        <img src="/img/Screenshot_2025-03-28_113325-removebg-preview.png" alt="Logo" ></img>
+      </router-link>
+
+      
+
     </div>
 
     <!-- Icona Menu per Mobile -->
@@ -35,22 +41,22 @@ export default {
     <!-- Menu -->
     <ul :class="{ 'menu-open': menuOpen }">
       <li>
-        <router-link :to="{ name: 'home' }" :class="{ active: $route.name === 'home' }" @click="closeMenu">
+        <router-link :to="{ name: 'home' }" :class="{ active: $route.name === 'home' }" @click="closeMenu"  class="link">
           Home
         </router-link>
       </li>
       <li>
-        <router-link :to="{ name: 'auto' }" :class="{ active: isAutoActive }" @click="closeMenu">
+        <router-link :to="{ name: 'auto' }" :class="{ active: isAutoActive }" @click="closeMenu" class="link">
           Auto
         </router-link>
       </li>
       <li>
-        <router-link :to="{ name: 'contatti' }" :class="{ active: $route.name === 'contatti' }" @click="closeMenu">
+        <router-link :to="{ name: 'contatti' }" :class="{ active: $route.name === 'contatti' }" @click="closeMenu" class="link">
           Contatti
         </router-link>
       </li>
       <li>
-        <router-link :to="{ name: 'chi-siamo' }" :class="{ active: $route.name === 'chi-siamo' }" @click="closeMenu">
+        <router-link :to="{ name: 'chi-siamo' }" :class="{ active: $route.name === 'chi-siamo' }" @click="closeMenu" class="link">
           Chi siamo
         </router-link>
       </li>
@@ -104,7 +110,7 @@ header a {
   text-transform: uppercase;
 }
 
-header a:hover,
+header .link:hover,
 header .active {
   border-bottom: 3px solid #D32F2F;
   font-weight: bold;
