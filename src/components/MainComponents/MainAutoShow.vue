@@ -120,7 +120,7 @@ export default{
     <div class="container">
 
       <h1>Maggiori dettagli</h1>
-      <p>
+      <p class="descrizione-auto">
         {{ auto.descrizione }}
       </p>
     </div>
@@ -149,6 +149,10 @@ export default{
   flex-wrap: wrap;
   margin: 5rem auto 0;
   padding: 0 1rem;
+}
+
+.descrizione-auto {
+  white-space: pre-line;
 }
 
 .caratteristiche {
