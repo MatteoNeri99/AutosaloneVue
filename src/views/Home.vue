@@ -496,7 +496,7 @@ article {
 }
 
 .marchi .jeep{
-  width: 160px;
+  width: 180px;
   height: 90px;
   align-self: center;
 }
