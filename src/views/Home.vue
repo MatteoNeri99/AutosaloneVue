@@ -611,8 +611,8 @@ article {
   }
 
   .loghi{
-    width: 70px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 
   .marchi .loghi:nth-child(2) { 
@@ -624,9 +624,6 @@ article {
     margin-right: 0.5rem;
   }
 
-  .marchi .jeep{
-    width: 100px;
-  }
 
   .jumbotron {
     width: 100%;
