@@ -76,8 +76,8 @@ footer {
   color: #FFFF;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 3rem 18rem;
+  justify-content: space-between;
+  padding: 3rem 15rem;
 }
 
 .diritti{
