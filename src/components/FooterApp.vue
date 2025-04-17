@@ -3,6 +3,7 @@ export default{
 
   data(){
     return{
+     
 
     }
   }
@@ -63,7 +64,7 @@ export default{
     <hr>
 
     <div class="diritti">
-      <p>Tutti i diritti sono riservati a Copyright ©  <span class="rosso">Autosalone Di fulvio Giacomo</span></p>
+      <p>Tutti i diritti sono riservati a Copyright 2025 @<span class="rosso">Autosalone Di fulvio Giacomo</span></p>
       <p>Realizzato da <span class="rosso">Matteo Neri</span></p>
     </div>
   </footer>
