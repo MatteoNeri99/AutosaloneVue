@@ -102,15 +102,13 @@ export default{
         <hr>
         <p class="car-p">Cambio : <span>{{ auto.cambio }}</span></p>
         <hr>
-        <p class="car-p">Emissionio <span>{{ auto.emissioni }}</span></p>
+        <p class="car-p">Emissioni : <span>{{ auto.emissioni }}</span></p>
         <hr>
         <p class="car-p">Numero porte : <span>{{ auto.porte }}</span></p>
         <hr>
         <p class="car-p">Numero Posti : <span>{{ auto.posti }}</span></p>
         <hr>
         <p class="car-p">Colore : <span>{{ auto.colore }}</span></p>
-
-        <p class="prezzo">{{ formatNumber(auto.prezzo )}} €</p>
     </div>
 
   </div>
