@@ -95,7 +95,6 @@ export default{
       <article class="article"  v-for="auto in autoList" :key="auto.id">
     
         <div class="img">
-          <p class="prezzo">{{ formatNumber(auto.prezzo)}} €</p>
           <img class="imgAuto" :src="auto.immagini[0]" alt="Auto" />
 
         </div>
